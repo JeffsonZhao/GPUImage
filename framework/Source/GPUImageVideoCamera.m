@@ -615,8 +615,8 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
     
     CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
     CVImageBufferRef cameraFrame = CMSampleBufferGetImageBuffer(sampleBuffer);
-    int bufferWidth = (int) CVPixelBufferGetWidth(cameraFrame);
-    int bufferHeight = (int) CVPixelBufferGetHeight(cameraFrame);
+    int bufferWidth = 480;
+    int bufferHeight = 480;
     CFTypeRef colorAttachments = CVBufferGetAttachment(cameraFrame, kCVImageBufferYCbCrMatrixKey, NULL);
     if (colorAttachments != NULL)
     {
@@ -664,8 +664,8 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
             
             if ( (imageBufferWidth != bufferWidth) && (imageBufferHeight != bufferHeight) )
             {
-                imageBufferWidth = 480;
-                imageBufferHeight = 480;
+                imageBufferWidth = bufferWidth;
+                imageBufferHeight = bufferHeight;
             }
             
             CVReturn err;
