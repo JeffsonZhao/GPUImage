@@ -664,8 +664,8 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
             
             if ( (imageBufferWidth != bufferWidth) && (imageBufferHeight != bufferHeight) )
             {
-                imageBufferWidth = bufferWidth;
-                imageBufferHeight = bufferHeight;
+                imageBufferWidth = 480;
+                imageBufferHeight = 480;
             }
             
             CVReturn err;
